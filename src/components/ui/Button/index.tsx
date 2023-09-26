@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { LegacyRef } from 'react';
 import IButtonProps from './types';
 
 function Button(props: IButtonProps): React.JSX.Element {
 
-    const buttonRef = React.useRef<HTMLLinkElement>(null);
+    const buttonRef:LegacyRef<HTMLAnchorElement> | undefined = React.useRef<HTMLAnchorElement>(null);
 
     const [click, setClick] = React.useState(false)
     const [size, setSize] = React.useState(200)
