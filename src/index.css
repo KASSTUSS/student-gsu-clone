@@ -103,6 +103,7 @@ body {
   border-radius: var(--border-radius);
   box-shadow: 0px 0px 0px -25px var(--color-primary);
   overflow: hidden;
+  outline: none;
 
   transform: scale(1);
   transition: var(--transition-delay);
