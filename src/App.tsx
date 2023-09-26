@@ -7,13 +7,13 @@ import { IRoute } from '@constants/routesList/types';
 function App(): React.JSX.Element {
 
   return (
-    <BrowserRouter>
-      {ROUTES_LIST.map((route: IRoute) => (
-        <Routes key={route.path}>
-          <Route path={route.path} element={route.element} />
-        </Routes>
-      ))}
-    </BrowserRouter>
+      <BrowserRouter>
+        {ROUTES_LIST.map((route: IRoute) => (
+          <Routes key={route.path}>
+            <Route path={route.path} element={route.element} />
+          </Routes>
+        ))}
+      </BrowserRouter>
   )
 }
 

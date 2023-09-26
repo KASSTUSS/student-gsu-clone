@@ -21,6 +21,7 @@
       "@helpers/*": ["helpers/*"],
       "@constants/*": ["constants/*"],
       "@pages/*": ["pages/*"],
+      "@contexts/*": ["contexts/*"],
     }
   },
   "include": ["src/**/*"],
