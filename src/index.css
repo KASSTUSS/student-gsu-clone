@@ -293,7 +293,6 @@ body {
   transform: translateY(0);
   transition: var(--transition-delay);
   pointer-events: none;
-  will-change: transform;
 }
 .input__input:focus ~ .input__label,
 .input__input:not(:placeholder-shown) ~ .input__label {
