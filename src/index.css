@@ -90,7 +90,7 @@ body {
 .animate-background div {
   position: absolute;
 
-  opacity: 0.35;
+  opacity: 0.25;
   border-radius: 50%;
 
   animation: bg-div-anim 3s infinite;
@@ -137,15 +137,15 @@ body {
 
 @keyframes bg-div-anim {
   0% {
-    opacity: 0.35;
+    opacity: 0.25;
     transform: scale(1);
   }
   50% {
-    opacity: 0.15;
+    opacity: 0.1;
     transform: scale(2.5);
   }
   100% {
-    opacity: 0.35;
+    opacity: 0.25;
     transform: scale(1);
   }
 }
