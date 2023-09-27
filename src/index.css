@@ -296,11 +296,12 @@ body {
 }
 .input__input:focus ~ .input__label,
 .input__input:not(:placeholder-shown) ~ .input__label {
+  font-size: 11px;
   color: var(--color-moremoredarkgray);
   background-color: var(--color-main);
   padding: 0 5px;
 
-  transform: scale(0.82) translateY(-24px) translateX(-10%);
+  transform: translateY(-20px);
 
   transition: var(--transition-delay);
 }
