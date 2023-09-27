@@ -44,6 +44,11 @@
   --color-darkgray: #76787a;
   --color-moredarkgray: #47484a;
   --color-moremoredarkgray: #1a1b1d;
+  
+  --color-bg-main: #ffffff;
+  --color-bg-1: #E8B3DA;
+  --color-bg-2: #D4AFFF;
+  --color-bg-3: #88DDFF;
 }
 
 html,
@@ -136,7 +141,7 @@ body {
     transform: scale(1);
   }
   50% {
-    opacity: 0.75;
+    opacity: 0.15;
     transform: scale(2.5);
   }
   100% {
