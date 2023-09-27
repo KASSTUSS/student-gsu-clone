@@ -1,31 +1,27 @@
 import React from 'react';
-import IWindowProps from './types';
+import SHOW_DELAY from '@constants/animation';
+import IShowContainerProps from './types';
 
-function Window(props: IWindowProps): React.JSX.Element {
+function ShowContainer(props: IShowContainerProps): React.JSX.Element {
 
     const [loading, setLoading] = React.useState(true)
 
     const {
         children,
-        width,
-        height,
+        queue
     } = props;
 
     React.useEffect(() => {
         setTimeout(() => {
             setLoading(false)
-        }, 50)
+        }, (SHOW_DELAY + 50) * queue)
     }, [])
 
     return (
         <>
             {!loading && (
                 <div
-                    className='window-block'
-                    style={{
-                        width,
-                        height: height || 'auto'
-                    }}
+                    className='show-container'
                 >
                     {children}
                 </div>
@@ -36,4 +32,4 @@ function Window(props: IWindowProps): React.JSX.Element {
     )
 }
 
-export default Window;
+export default ShowContainer;
