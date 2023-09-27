@@ -14,16 +14,16 @@ function HomePage(): ReactElement {
     return (
 
         <div className='wrapper'>
-            
-                <div className='logo-login'>
+
+            <div className='logo-login'>
                 <ShowContainer queue={1}>
                     <div>
                         <h1>Student.GSU</h1>
-                        <img src="/graduation.png" alt="logo icon" />
+                        <img src="/graduation-cap.svg" alt="logo icon" />
                     </div>
-                    
-            </ShowContainer>
-                </div>
+
+                </ShowContainer>
+            </div>
             <ShowContainer queue={2}>
                 <Window width='275px'>
                     <div className='container-center-x login-container'>

@@ -14,7 +14,7 @@ function ShowContainer(props: IShowContainerProps): React.JSX.Element {
     React.useEffect(() => {
         setTimeout(() => {
             setLoading(false)
-        }, (SHOW_DELAY + 50) * queue)
+        }, (SHOW_DELAY + 500) * queue + 250)
     }, [])
 
     return (

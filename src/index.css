@@ -353,7 +353,7 @@ body {
 }
 
 .show-container {
-  animation: show 0.5s 1 forwards;
+  animation: show 0.5s 1 forwards ease-out;
 }
 
 @keyframes show {
