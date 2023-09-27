@@ -110,8 +110,8 @@ body {
   top: 15%;
   left: 10%;
 
-  width: 350px;
-  height: 350px;
+  width: max(25vh, 25vw);
+  height: max(25vh, 25vw);
 
   background-color: var(--color-bg-1);
   filter: blur(75px);
@@ -123,8 +123,8 @@ body {
   top: 5%;
   right: 10%;
 
-  width: 500px;
-  height: 500px;
+  width: max(35vh, 35vw);
+  height: max(35vh, 35vw);
 
   background-color: var(--color-bg-2);
   filter: blur(85px);
@@ -136,8 +136,8 @@ body {
   bottom: 10%;
   left: 35%;
 
-  width: 400px;
-  height: 400px;
+  width: max(30vh, 30vw);
+  height: max(30vh, 30vw);
 
   background-color: var(--color-bg-3);
   filter: blur(80px);
