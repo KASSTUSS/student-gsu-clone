@@ -93,8 +93,6 @@ body {
   opacity: 0.25;
   border-radius: 50%;
 
-  will-change: transform, opacity;
-
   animation: bg-div-anim 3s infinite;
 }
 
