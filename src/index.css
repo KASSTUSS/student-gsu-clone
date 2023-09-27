@@ -181,7 +181,7 @@ body {
   top: 70px;
 }
 
-.logo-login div {
+.logo-login__container {
   position: relative;
   text-align: center;
   user-select: none;
@@ -190,12 +190,13 @@ body {
 .logo-login h1 {
   font-size: 29px;
 }
-.logo-login img {
+.logo-login__img {
   position: absolute;
   top: -15px;
   right: -50px;
 
   width: 45px;
+  height: auto;
 
   transform: rotate(15deg);
 }
