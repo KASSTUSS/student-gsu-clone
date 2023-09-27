@@ -93,6 +93,8 @@ body {
   opacity: 0.25;
   border-radius: 50%;
 
+  will-change: transform, opacity;
+
   animation: bg-div-anim 3s infinite;
 }
 
@@ -291,15 +293,15 @@ body {
   transform: translateY(0);
   transition: var(--transition-delay);
   pointer-events: none;
+  will-change: transform;
 }
 .input__input:focus ~ .input__label,
 .input__input:not(:placeholder-shown) ~ .input__label {
   color: var(--color-moremoredarkgray);
-  font-size: 11px;
   background-color: var(--color-main);
   padding: 0 5px;
 
-  transform: translateY(-20px);
+  transform: scale(0.82) translateY(-24px) translateX(-10%);
 
   transition: var(--transition-delay);
 }
