@@ -1,5 +1,5 @@
 import React from 'react';
-import SHOW_DELAY from '@constants/animation';
+import { SHOW_DELAY, SHOW_DUR } from '@constants/animation';
 import IShowContainerProps from './types';
 
 function ShowContainer(props: IShowContainerProps): React.JSX.Element {
@@ -14,8 +14,8 @@ function ShowContainer(props: IShowContainerProps): React.JSX.Element {
     React.useEffect(() => {
         setTimeout(() => {
             setLoading(false)
-        }, (SHOW_DELAY + 500) * queue + 250)
-    }, [])
+        }, (SHOW_DELAY + SHOW_DUR) * queue + 300)
+    }, [queue])
 
     return (
         <>

@@ -6,6 +6,12 @@ import IButtonProps from './types';
 
 function Button(props: IButtonProps): React.JSX.Element {
 
+    const {
+        value,
+        width,
+        onClick,
+    } = props;
+
     const buttonRef:LegacyRef<HTMLAnchorElement> | undefined = React.useRef<HTMLAnchorElement>(null);
 
     const [click, setClick] = React.useState(false)
@@ -17,6 +23,7 @@ function Button(props: IButtonProps): React.JSX.Element {
 
     const buttonClickHandler = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void => {
 
+        onClick();
         setClick(true);
 
         const rect: DOMRect | undefined = buttonRef.current?.getBoundingClientRect()
@@ -47,11 +54,6 @@ function Button(props: IButtonProps): React.JSX.Element {
     React.useEffect(() => {
         setSize(Math.max(buttonRef.current?.clientWidth ?? 0, buttonRef.current?.clientHeight ?? 0))
     }, [])
-
-    const {
-        value,
-        width,
-    } = props;
 
     return (
         <a
