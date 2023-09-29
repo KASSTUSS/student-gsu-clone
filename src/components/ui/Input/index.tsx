@@ -3,11 +3,19 @@ import IInputProps from './types';
 
 function Input(props: IInputProps): React.JSX.Element {
 
+    const [valueInput, setValueInput] = React.useState('');
+
     const {
         label,
+        setValue,
         width,
         autofocus,
     } = props;
+
+    const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setValueInput(e.target.value)
+        setValue(e.target.value)
+    }
 
     return (
         <div 
@@ -18,6 +26,8 @@ function Input(props: IInputProps): React.JSX.Element {
                 className='input__input'
                 type="text"
                 placeholder=''
+                value={valueInput}
+                onChange={onChangeInput}
                 autoFocus={autofocus}
             />
             <div

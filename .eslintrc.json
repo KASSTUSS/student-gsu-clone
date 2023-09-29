@@ -30,7 +30,9 @@
             "@constants": "./src/constants",
             "@components": "./src/components",
             "@contexts": "./src/contexts",
-            "@pages": "./src/pages"
+            "@pages": "./src/pages",
+            "@api": "./src/api",
+            "@utils": "./src/utils"
         },
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
@@ -59,6 +61,7 @@
    "jsx-a11y/no-autofocus": "off",
    "react/jsx-no-useless-fragment": "off",
    "import/prefer-default-export": "off",
-   "@typescript-eslint/no-shadow": ["error"]
+   "@typescript-eslint/no-shadow": ["error"],
+   "consistent-return": "off"
   }
 }

@@ -14,7 +14,7 @@ const getTheme = () => {
 }
 
 function ThemeProvider({ children }: { children: React.JSX.Element }): React.JSX.Element {
-    const [theme, setTheme] = React.useState(getTheme)
+    const [theme, setTheme] = React.useState(getTheme())
 
     React.useEffect(() => {
         document.documentElement.dataset.theme = theme

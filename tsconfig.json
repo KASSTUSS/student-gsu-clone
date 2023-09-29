@@ -22,6 +22,8 @@
       "@constants/*": ["constants/*"],
       "@pages/*": ["pages/*"],
       "@contexts/*": ["contexts/*"],
+      "@api/*": ["api/*"],
+      "@utils/*": ["utils/*"]
     }
   },
   "include": ["src/**/*"],

@@ -4,23 +4,49 @@ import Window from '@components/Window';
 import Button from '@components/ui/Button';
 import Input from '@components/ui/Input';
 import Line from '@components/ui/Line';
-import React, { ReactElement, useState } from 'react';
+import { ILoginData, IResponseData, StudentService } from '@api/StudentService';
+import React from 'react';
+import { setLoginData } from '@contexts/AuthContext/actions';
+import { dispatchAuth } from '@contexts/AuthContext/provider';
+import { redirect } from 'react-router-dom';
 
-function HomePage(): ReactElement {
+function HomePage(): React.ReactElement {
 
-    const [click, setClick] = useState(false)
+    const [errorNotFount, setErrorNotFount] = React.useState(false)
+    const [loginSurname, setLoginSurname] = React.useState('')
+    const [loginStudentCardNumber, setLoginStudentCardNumber] = React.useState('')
 
     React.useEffect(() => {
         document.title = 'Student.GSU - Вход'
     }, [])
 
-    const clickLoginHandler = (): void => {
-        setClick(true)
+    const clickLoginHandler = async (): Promise<void> => {
+
+        const loginData: ILoginData = {
+            surname: loginSurname.trim(),
+            studentCardNumber: loginStudentCardNumber.trim(),
+        }
+
+        const res: IResponseData = await StudentService.getStudentData(loginData);
+
+        if (res.code !== 200) {
+            return setErrorNotFount(true)
+        }
+
+        dispatchAuth(
+            setLoginData({
+                surname: loginData.surname,
+                studentCardNumber: loginData.studentCardNumber,
+            })
+        )
+
+        redirect('/profile')
+
     }
 
     return (
         <>
-            <Alert text='Такой студент не найден!' icon='/circle-xmark.svg' active={click} setActive={setClick} />
+            <Alert text='Такой студент не найден!' icon='/circle-xmark.svg' active={errorNotFount} setActive={setErrorNotFount} />
             <div className='wrapper'>
                 <div className='logo-login'>
                     <ShowContainer queue={1}>
@@ -34,8 +60,8 @@ function HomePage(): ReactElement {
                     <Window width='275px'>
                         <div className='container-center-x login-container'>
                             <h1 className='login-title'>Вход</h1>
-                            <Input label='Фамилия' />
-                            <Input label='Номер студенческого' />
+                            <Input label='Фамилия' setValue={setLoginSurname} />
+                            <Input label='Номер студенческого' setValue={setLoginStudentCardNumber} />
                             <Line />
                             <Button value='Войти' onClick={clickLoginHandler} />
                         </div>

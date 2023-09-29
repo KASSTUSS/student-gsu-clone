@@ -370,12 +370,13 @@ body {
 
 .alert {
   position: absolute;
-  top: 15px;
+  top: 25px;
   left: 50%;
 
   display: flex;
   align-items: center;
 
+  width: auto;
   height: auto;
 
   font-size: 14px;
@@ -386,8 +387,6 @@ body {
   border-radius: 15px;
   box-shadow: 2px 3px 25px -15px var(--color-darkgray);
   transform: translateX(-50%);
-
-  margin-top: 18px;
 
   z-index: 5;
   

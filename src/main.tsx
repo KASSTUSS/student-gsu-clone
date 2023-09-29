@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@contexts/ThemeContext'
+import ContextsProvider from '@contexts/ContextsProviver'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Root from '@components/Root'
@@ -7,10 +7,10 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ThemeProvider>
+    <ContextsProvider>
       <Root>
         <App />
       </Root>
-    </ThemeProvider>
+    </ContextsProvider>
   </React.StrictMode>,
 )
