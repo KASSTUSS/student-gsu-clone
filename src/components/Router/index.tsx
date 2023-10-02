@@ -9,7 +9,7 @@ import { IRoutingContextValue, RoutingContext } from '@contexts/RoutingContext';
 
 const { PROFILE, HOME } = PATHS;
 
-export let checkAuth;
+export let checkAuth: () => void;
 
 function Router(): React.JSX.Element {
 
