@@ -8,7 +8,6 @@ function App(): React.JSX.Element {
     <BrowserRouter>
       <Router />
     </BrowserRouter>
-
   )
 }
 

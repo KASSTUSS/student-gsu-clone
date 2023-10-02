@@ -7,10 +7,13 @@ export const defaultAuthData: IAuthContextValue = {
 };
 
 export const setAuthToLocalStorage = (loginData: IAuthContextValue) => {
-  localStorage.setItem('isAuth', loginData.isAuth ? '1' : '0')
-  localStorage.setItem('surname', loginData.surname ? loginData.surname : '')
-  localStorage.setItem('studentCardNumber', loginData.studentCardNumber ? loginData.studentCardNumber : '')
-}
+  localStorage.setItem('isAuth', loginData.isAuth ? '1' : '0');
+  localStorage.setItem('surname', loginData.surname ? loginData.surname : '');
+  localStorage.setItem(
+    'studentCardNumber',
+    loginData.studentCardNumber ? loginData.studentCardNumber : '',
+  );
+};
 
 export const reducer = (
   state: IAuthContextValue,
@@ -22,14 +25,14 @@ export const reducer = (
         isAuth: true,
         surname: action.surname,
         studentCardNumber: action.studentCardNumber,
-      }
+      };
 
-      setAuthToLocalStorage(loginData)
+      setAuthToLocalStorage(loginData);
 
-      return loginData
+      return loginData;
     }
     case 'LOGOUT': {
-      setAuthToLocalStorage(defaultAuthData)
+      setAuthToLocalStorage(defaultAuthData);
       return defaultAuthData;
     }
     default: {

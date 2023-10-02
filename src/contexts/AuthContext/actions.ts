@@ -9,6 +9,6 @@ export const setLoginData = ({
   studentCardNumber,
 });
 
-export const setLogoutnData = (): IAuthActionReducer => ({
+export const setLogoutData = (): IAuthActionReducer => ({
   type: 'LOGOUT',
 });

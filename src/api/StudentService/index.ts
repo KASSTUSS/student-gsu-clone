@@ -24,7 +24,8 @@ export interface IError {
 
 export interface IResponseData {
     code: 200 | 404 | 500;
-    data: IStudentData | IError;
+    data?: IStudentData;
+    error?: IError;
 }
 
 export interface ILoginData {
@@ -40,10 +41,10 @@ export const StudentService: IStudentService = {
     async getStudentData(loginData) {
         try {
             // !!!
-            if (!(loginData.studentCardNumber === '20-ПМС-12' && loginData.surname === 'Чвалов')) {
+            if (!(loginData.studentCardNumber === '1' && loginData.surname === '1')) {
                 return {
                     code: 404,
-                    data: {
+                    error: {
                         errorMessage: 'NOT_FOUND'
                     }
                 }
@@ -58,7 +59,7 @@ export const StudentService: IStudentService = {
         } catch (e) {
             return {
                 code: 500,
-                data: {
+                error: {
                     errorMessage: ''
                 }
             }

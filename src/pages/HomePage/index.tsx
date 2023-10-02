@@ -56,7 +56,7 @@ function HomePage(): React.ReactElement {
                         </div>
                     </ShowContainer>
                 </div>
-                <ShowContainer queue={2}>
+                <ShowContainer queue={2} isLast>
                     <Window width='275px'>
                         <div className='container-center-x login-container'>
                             <h1 className='login-title'>Вход</h1>

@@ -5,17 +5,23 @@ import ROUTES_LIST from '@constants/routesList';
 import { IRoute } from '@constants/routesList/types';
 import { AuthContext, IAuthContextValue } from '@contexts/AuthContext';
 import PATHS from '@constants/paths';
+import { IRoutingContextValue, RoutingContext } from '@contexts/RoutingContext';
 
 const { PROFILE, HOME } = PATHS;
 
+export let checkAuth;
+
 function Router(): React.JSX.Element {
+
+    const [skipFirstRender, setSkipFirstRender] = React.useState<boolean>(true);
 
     const navigate = useNavigate();
     const location = useLocation();
 
-    const authDataContext: IAuthContextValue = React.useContext(AuthContext)
+    const authDataContext: IAuthContextValue = React.useContext(AuthContext);
+    const routingContext: IRoutingContextValue = React.useContext(RoutingContext);
 
-    const checkAuth = () => {
+    checkAuth = () => {
         if (authDataContext.isAuth) {
             navigate(PROFILE)
         } else {
@@ -24,8 +30,13 @@ function Router(): React.JSX.Element {
     }
 
     React.useEffect(() => {
-        checkAuth()
-    }, [authDataContext, location])
+        if (skipFirstRender) {
+            setSkipFirstRender(false);
+        } else {
+            routingContext.animationDone(true);
+        }
+
+    }, [authDataContext, location.state])
 
     React.useEffect(() => {
         checkAuth()
