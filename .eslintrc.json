@@ -33,7 +33,7 @@
             "@pages": "./src/pages",
             "@api": "./src/api",
             "@utils": "./src/utils",
-            "@ui": "./src/ui"
+            "@ui": "./src/components//ui"
         },
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }

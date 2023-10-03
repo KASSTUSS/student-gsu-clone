@@ -24,7 +24,7 @@
       "@contexts/*": ["contexts/*"],
       "@api/*": ["api/*"],
       "@utils/*": ["utils/*"],
-      "@ui/*": ["ui/*"]
+      "@ui/*": ["components/ui/*"]
     }
   },
   "include": ["src/**/*"],
