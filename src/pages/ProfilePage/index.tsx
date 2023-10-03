@@ -7,9 +7,8 @@ import { setLogoutData } from '@contexts/AuthContext/actions';
 import { dispatchAuth } from '@contexts/AuthContext/provider';
 import React, { useContext, useEffect, useState } from 'react';
 import ReactECharts from 'echarts-for-react';
-import Line from '@components/ui/Line';
 
-const getListOfNumbers = (count) => {
+const getListOfNumbers = (count: number) => {
     const list = new Array(count);
     for (let i = 0; i < count; i++) {
         list[i] = i + 1;
@@ -57,7 +56,6 @@ function ProfilePage(): React.ReactElement {
 
         averageMarks = new Array(studentData.session.length);
         averageMarksProgress = new Array(studentData.session.length);
-        let numOfMarksFull = 0;
 
         studentData.session.forEach(session => {
             let sumOfMarks = 0;
@@ -65,7 +63,6 @@ function ProfilePage(): React.ReactElement {
             session.marks.forEach(mark => {
                 if (typeof mark.result === 'number') {
                     ++numOfMarks;
-                    ++numOfMarksFull;
                     marks[mark.result - 1] = marks[mark.result - 1] + 1;
                     sumOfMarks += mark.result;
                 }
