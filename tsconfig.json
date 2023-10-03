@@ -23,7 +23,8 @@
       "@pages/*": ["pages/*"],
       "@contexts/*": ["contexts/*"],
       "@api/*": ["api/*"],
-      "@utils/*": ["utils/*"]
+      "@utils/*": ["utils/*"],
+      "@ui/*": ["ui/*"]
     }
   },
   "include": ["src/**/*"],
