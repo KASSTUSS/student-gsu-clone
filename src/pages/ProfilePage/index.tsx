@@ -104,37 +104,39 @@ function ProfilePage(): React.ReactElement {
                             }}
                         >
                             <Window width='100%'>
-                                <div className='window-title'>
-                                    Персональная <br/> информация
-                                </div>
-                                <div className='profile-main__container personal_info'>
-                                    <div>
-                                        <div className='label_info'>ФИО:</div>
-                                        <div className='profile__fullname'>
-                                            <span>
-                                                {studentData?.personalData.surname}
-                                            </span>
-                                            <span>
-                                                {studentData?.personalData.name}
-                                            </span>
-                                            <span>
-                                                {studentData?.personalData.patronymic}
-                                            </span>
+                                <>
+                                    <div className='window-title'>
+                                        Персональная <br /> информация
+                                    </div>
+                                    <div className='profile-main__container personal_info'>
+                                        <div>
+                                            <div className='label_info'>ФИО:</div>
+                                            <div className='profile__fullname'>
+                                                <span>
+                                                    {studentData?.personalData.surname}
+                                                </span>
+                                                <span>
+                                                    {studentData?.personalData.name}
+                                                </span>
+                                                <span>
+                                                    {studentData?.personalData.patronymic}
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className='label_info'>Факультет:</div>
+                                            <div className='value_info'>{studentData?.personalData.faculty}</div>
+                                        </div>
+                                        <div>
+                                            <div className='label_info'>Специальность:</div>
+                                            <div className='value_info'>{studentData?.personalData.specialty}</div>
+                                        </div>
+                                        <div>
+                                            <div className='label_info'>Группа:</div>
+                                            <div className='value_info'>{studentData?.personalData.group}</div>
                                         </div>
                                     </div>
-                                    <div>
-                                        <div className='label_info'>Факультет:</div>
-                                        <div className='value_info'>{studentData?.personalData.faculty}</div>
-                                    </div>
-                                    <div>
-                                        <div className='label_info'>Специальность:</div>
-                                        <div className='value_info'>{studentData?.personalData.specialty}</div>
-                                    </div>
-                                    <div>
-                                        <div className='label_info'>Группа:</div>
-                                        <div className='value_info'>{studentData?.personalData.group}</div>
-                                    </div>
-                                </div>
+                                </>
                             </Window>
                         </ShowContainer>
                         <ShowContainer queue={3}
