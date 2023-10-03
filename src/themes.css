@@ -1,0 +1,28 @@
+:root {
+    --default-font-family: 'Noto Sans', sans-serif;
+  
+    --border-radius: 12px;
+    --transition-delay: 0.25s;
+  }
+  
+  :root[data-theme='light'] {
+    --color-main: #F3F4F5;
+    --color-primary: #a5aafe;
+
+    --color-active-text: #242529;
+    --color-noactive-text: #5f626b;
+
+    --color-block: #ffffff;
+    --color-shadow: #F9FAFB;
+  }
+  
+  :root[data-theme='dark'] {
+    --color-main: #242529;
+    --color-primary: #a5aafe;
+
+    --color-active-text: #ffffff;
+    --color-noactive-text: #a1a6b1;
+
+    --color-block: #37373f;
+    --color-shadow: #26262b;
+  }

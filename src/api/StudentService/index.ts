@@ -42,7 +42,6 @@ export const StudentService: IStudentService = {
         try {
             const response = await axios.get(`https://markstat-back.onrender.com/api?card=${loginData.studentCardNumber}&surname=${loginData.surname}`)
 
-            console.log(JSON.stringify(response))
             const data: IResponseData = {
                 code: 200,
                 data: response.data.message[0],

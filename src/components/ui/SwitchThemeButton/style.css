@@ -1,0 +1,23 @@
+@import '../../../themes.css';
+
+.switch-theme-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  width: 45px;
+  height: 45px;
+
+  font-size: 20px;
+  color: var(--color-active-text);
+
+  background-color: var(--color-main);
+  border-radius: 12px;
+  box-shadow: none;
+  outline: none;
+  transition: 0.15s;
+  user-select: none;
+
+  border: 1px solid var(--color-block);
+}

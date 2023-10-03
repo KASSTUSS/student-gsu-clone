@@ -1,6 +1,8 @@
 import React from 'react';
 import IInputProps from './types';
 
+import './style.css';
+
 function Input(props: IInputProps): React.JSX.Element {
 
     const [valueInput, setValueInput] = React.useState('');
