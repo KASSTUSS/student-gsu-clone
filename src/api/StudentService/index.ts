@@ -40,19 +40,11 @@ export interface IStudentService {
 export const StudentService: IStudentService = {
     async getStudentData(loginData) {
         try {
-            // !!!
-            if (!(loginData.studentCardNumber === '1' && loginData.surname === '1')) {
-                return {
-                    code: 404,
-                    error: {
-                        errorMessage: 'NOT_FOUND'
-                    }
-                }
-            }
+            const response = await axios.get(`https://markstat-back.onrender.com/api?card=${loginData.studentCardNumber}&surname=${loginData.surname}`)
 
             const data: IResponseData = {
                 code: 200,
-                data: exampleJsonFile.result[0],
+                data: response.data.message[0],
             }
 
             return data
