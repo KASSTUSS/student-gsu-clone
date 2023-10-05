@@ -4,6 +4,8 @@
 import React, { LegacyRef } from 'react';
 import IButtonProps from './types';
 
+import './style.css';
+
 function Button(props: IButtonProps): React.JSX.Element {
 
     const {

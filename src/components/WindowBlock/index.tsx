@@ -5,22 +5,16 @@ import './style.css';
 
 function WindowBlock(props: IBlockProps): React.JSX.Element {
 
-    const [loading, setLoading] = React.useState(true)
-
     const {
         content,
         title,
         subtitle,
+        style,
+        className,
     } = props;
 
-    React.useEffect(() => {
-        setTimeout(() => {
-            setLoading(false)
-        }, 50)
-    }, [])
-
     return (
-        <section className='window-block'>
+        <section className={`window-block${className && ` ${className}`}`} style={style}>
             <div className='window-block__container'>
                 <header className='window-block__header'>
                     <h2 className='window-block__title'>

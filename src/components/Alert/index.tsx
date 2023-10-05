@@ -2,6 +2,8 @@ import React from 'react';
 import { ACTIVE_ALERT_DUR, SHOW_ALERT_DUR } from '@constants/animation';
 import IAlertProps from './types';
 
+import './style.css';
+
 function Alert(props: IAlertProps): React.JSX.Element {
 
     const [showAlert, setShowAlert] = React.useState(false)

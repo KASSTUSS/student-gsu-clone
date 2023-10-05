@@ -2,7 +2,6 @@
 
 .window-block {
     padding: 35px 30px;
-    backdrop-filter: blur(3px);
     background-color: var(--color-block);
     box-shadow: 2px 5px 35px -25px var(--color-shadow);
   
@@ -19,7 +18,7 @@
     flex-direction: column;
 }
 .window-block__header {
-    flex: 0 0 50px;
+    flex: 0 0 40px;
     width: 100%;
 
 
@@ -47,7 +46,11 @@
 
     width: 100%;
     height: auto;
-    padding-top: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
 
     color: var(--color-active-text)
 }

@@ -6,8 +6,9 @@
   }
   
   :root[data-theme='light'] {
-    --color-main: #F3F4F5;
-    --color-primary: #a5aafe;
+    --color-main: #e4e4e5;
+    --color-primary: #1572fe;
+    --color-secondary: #7cb0fe;
 
     --color-active-text: #242529;
     --color-noactive-text: #5f626b;
@@ -18,7 +19,8 @@
   
   :root[data-theme='dark'] {
     --color-main: #242529;
-    --color-primary: #a5aafe;
+    --color-primary: #1572fe;
+    --color-secondary: #7cb0fe;
 
     --color-active-text: #ffffff;
     --color-noactive-text: #a1a6b1;

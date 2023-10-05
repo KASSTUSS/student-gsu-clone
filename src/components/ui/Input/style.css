@@ -27,7 +27,7 @@
     transition: var(--transition-delay);
   }
   .input__input:hover {
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--color-secondary);
   
     transition: var(--transition-delay);
   }
@@ -37,7 +37,7 @@
     transition: var(--transition-delay);
   }
   .input__input:focus {
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--color-secondary);
     box-shadow: 0px 0px 40px -20px var(--color-primary);
   
     transition: var(--transition-delay);
@@ -66,7 +66,7 @@
   }
 
   .input__input:focus ~ .input__label {
-    color: var(--color-primary);
+    color: var(--color-secondary);
   }
   
 

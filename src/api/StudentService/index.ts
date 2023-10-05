@@ -1,4 +1,4 @@
-import axios from 'axios';
+import exampleJsonFile from './exampleData.json';
 
 export interface IStudentData {
     personalData: {
@@ -40,11 +40,19 @@ export interface IStudentService {
 export const StudentService: IStudentService = {
     async getStudentData(loginData) {
         try {
-            const response = await axios.get(`https://markstat-back.onrender.com/api?card=${loginData.studentCardNumber}&surname=${loginData.surname}`)
+            // !!!
+            if (!(loginData.studentCardNumber === '1' && loginData.surname === '1')) {
+                return {
+                    code: 404,
+                    error: {
+                        errorMessage: 'NOT_FOUND'
+                    }
+                }
+            }
 
             const data: IResponseData = {
                 code: 200,
-                data: response.data.message[0],
+                data: exampleJsonFile.result[0],
             }
 
             return data
