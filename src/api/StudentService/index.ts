@@ -1,4 +1,4 @@
-import exampleJsonFile from './exampleData.json';
+import axios from 'axios';
 
 export interface IStudentData {
     personalData: {
