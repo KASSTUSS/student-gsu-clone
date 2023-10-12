@@ -6,7 +6,8 @@
   }
   
   :root[data-theme='light'] {
-    --color-main: #e4e4e5;
+    --color-main: #efeff0;
+    --color-main-rgba: rgba(228, 228, 229, 0.75);
     --color-primary: #1572fe;
     --color-secondary: #7cb0fe;
 
@@ -19,6 +20,7 @@
   
   :root[data-theme='dark'] {
     --color-main: #242529;
+    --color-main-rgba: rgba(36, 37, 41, 0.75);
     --color-primary: #1572fe;
     --color-secondary: #7cb0fe;
 

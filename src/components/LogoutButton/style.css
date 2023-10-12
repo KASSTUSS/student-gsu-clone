@@ -1,0 +1,53 @@
+@import '../../themes.css';
+
+.logout-button {
+  display: flex;
+  align-items: center;
+
+  padding-left: 35px;
+}
+
+.logout-button__button {
+  display: flex;
+  gap: 8px;
+
+  color: var(--color-active-text);
+  background-color: transparent;
+  border: none;
+  user-select: none;
+
+  font-size: 16px;
+
+  transition: 0.15s;
+}
+.logout-button__button:hover {
+  cursor: pointer;
+  color: var(--color-noactive-text);
+
+  transition: 0.15s;
+
+}
+.logout-button__button:hover svg {
+  fill: var(--color-noactive-text);
+
+  transition: 0.15s;
+
+}
+
+.logout-button__button svg {
+  fill: var(--color-active-text);
+  height: 18px;
+  width: auto;
+}
+
+
+@media screen and (max-width: 936px) {
+  .logout-button__button {
+      gap: 7px;
+
+      font-size: 15px;
+  }
+  .logout-button__button svg {
+      height: 17px;
+  }
+}

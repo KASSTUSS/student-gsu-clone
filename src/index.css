@@ -121,3 +121,19 @@ body {
     flex-direction: column;
   }
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--color-main);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-main);
+  border-radius: 3px;
+  border: 1px solid var(--color-block);
+}

@@ -1,21 +1,29 @@
-import axios from 'axios';
+// import exampleJsonFile from './exampleData.json';
+
+import axios from "axios";
+
+export interface IPersonalData {
+    surname: string;
+    name: string;
+    patronymic: string;
+    faculty: string;
+    specialty:string;
+    group: string;
+}
+
+export interface IMarkData {
+    object: string;
+    result: number | true | false | null;
+}
+
+export interface IStudentsMarksData {
+    sessionNumber: number;
+    marks: IMarkData[];
+}
 
 export interface IStudentData {
-    personalData: {
-        surname: string;
-        name: string;
-        patronymic: string;
-        faculty: string;
-        specialty:string;
-        group: string;
-    };
-    session: {
-        sessionNumber: number;
-        marks: {
-            object: string;
-            result: number | true | false | null;
-        }[];
-    }[];
+    personalData: IPersonalData;
+    session: IStudentsMarksData[];
 }
 
 export interface IError {
@@ -40,6 +48,21 @@ export interface IStudentService {
 export const StudentService: IStudentService = {
     async getStudentData(loginData) {
         try {
+            // !!!
+            // if (!(loginData.studentCardNumber === '1' && loginData.surname === '1')) {
+            //     return {
+            //         code: 404,
+            //         error: {
+            //             errorMessage: 'NOT_FOUND'
+            //         }
+            //     }
+            // }
+
+            // const data: IResponseData = {
+            //     code: 200,
+            //     data: exampleJsonFile.result[0],
+            // }
+
             const response = await axios.get(`https://markstat-back.onrender.com/api?card=${loginData.studentCardNumber}&surname=${loginData.surname}`)
 
             const data: IResponseData = {

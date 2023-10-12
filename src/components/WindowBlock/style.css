@@ -1,6 +1,9 @@
 @import '../../themes.css';
 
 .window-block {
+    width: auto;
+    height: auto;
+
     padding: 35px 30px;
     background-color: var(--color-block);
     box-shadow: 2px 5px 35px -25px var(--color-shadow);
