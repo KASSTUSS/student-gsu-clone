@@ -38,14 +38,13 @@ function HomePage(): React.ReactElement {
             return setErrorNotFount(true)
         }
 
+        setLoadingData(false);
 
         dispatchAuth(
             setLoginData({
                 studentData: res.data
             })
         )
-
-        setLoadingData(false);
         redirect('/profile')
 
     }

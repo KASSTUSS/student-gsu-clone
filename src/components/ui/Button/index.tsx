@@ -58,6 +58,10 @@ function Button(props: IButtonProps): React.JSX.Element {
     }, [click])
 
     React.useEffect(() => {
+        console.log(spinner);
+    }, [spinner])
+
+    React.useEffect(() => {
         setSize(Math.max(buttonRef.current?.clientWidth ?? 0, buttonRef.current?.clientHeight ?? 0))
     }, [])
 
