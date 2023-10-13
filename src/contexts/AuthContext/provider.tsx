@@ -5,18 +5,17 @@ import { defaultAuthData, reducer } from './reducer'
 import { IAuthActionReducer, IAuthContextValue } from './types'
 
 const getAuthData = (): IAuthContextValue => {
-    const isAuth: string = `${window?.localStorage?.getItem('isAuth')}`
+    const isAuth: string = `${window?.localStorage?.getItem('isAuth')}`;
+    const studentDataStr = `${window?.localStorage?.getItem('studentData')}`;
 
-    if (isAuth !== '1') return defaultAuthData
+    if (isAuth !== '1' || !studentDataStr) return defaultAuthData;
 
-    const surname: string = `${window?.localStorage?.getItem('surname')}`
-    const studentCardNumber: string = `${window?.localStorage?.getItem('studentCardNumber')}`
+    const studentData: IAuthContextValue = JSON.parse(studentDataStr);
 
-    return {
-        isAuth: true,
-        surname,
-        studentCardNumber
+    if (!studentData.isAuth) {
+        return defaultAuthData;
     }
+    return studentData;
 }
 
 // eslint-disable-next-line import/no-mutable-exports
