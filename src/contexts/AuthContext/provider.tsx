@@ -12,9 +12,6 @@ const getAuthData = (): IAuthContextValue => {
 
     const studentData: IAuthContextValue = JSON.parse(studentDataStr);
 
-    if (!studentData.isAuth) {
-        return defaultAuthData;
-    }
     return studentData;
 }
 
