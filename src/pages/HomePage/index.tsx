@@ -36,16 +36,18 @@ function HomePage(): React.ReactElement {
 
         if (res.code !== 200) {
             return setErrorNotFount(true)
+        } else {
+            dispatchAuth(
+                setLoginData({
+                    studentData: res.data
+                })
+            )
+    
+            redirect('/profile')
         }
 
 
-        dispatchAuth(
-            setLoginData({
-                studentData: res.data
-            })
-        )
-
-        redirect('/profile')
+        
 
     }
 
