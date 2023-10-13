@@ -5,6 +5,7 @@ import React, { LegacyRef } from 'react';
 import IButtonProps from './types';
 
 import './style.css';
+import { CSSTransition } from 'react-transition-group';
 
 function Button(props: IButtonProps): React.JSX.Element {
 
@@ -12,6 +13,7 @@ function Button(props: IButtonProps): React.JSX.Element {
         value,
         width,
         onClick,
+        spinner,
     } = props;
 
     const buttonRef:LegacyRef<HTMLAnchorElement> | undefined = React.useRef<HTMLAnchorElement>(null);
@@ -22,6 +24,8 @@ function Button(props: IButtonProps): React.JSX.Element {
         x: '0',
         y: '0',
     });
+
+    const spinnerRef = React.useRef(null);
 
     const buttonClickHandler = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void => {
 
@@ -67,6 +71,15 @@ function Button(props: IButtonProps): React.JSX.Element {
             }}
         >
             {value}
+            <CSSTransition
+                in={spinner}
+                nodeRef={spinnerRef}
+                timeout={250}
+                classNames="spinner"
+                unmountOnExit
+            >
+                <div ref={spinnerRef} className="lds-roller"><div /><div /><div /><div /><div /><div /><div /><div /></div>
+            </CSSTransition>
             {
                 click && (
                     <div

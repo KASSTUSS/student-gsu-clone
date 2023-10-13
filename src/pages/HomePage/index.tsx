@@ -17,12 +17,15 @@ function HomePage(): React.ReactElement {
     const [errorNotFount, setErrorNotFount] = React.useState(false)
     const [loginSurname, setLoginSurname] = React.useState('')
     const [loginStudentCardNumber, setLoginStudentCardNumber] = React.useState('')
+    const [loadingData, setLoadingData] = React.useState<boolean>(false);
 
     React.useEffect(() => {
         document.title = 'Student.GSU - Вход'
     }, [])
 
     const clickLoginHandler = async (): Promise<void> => {
+
+        setLoadingData(true);
 
         const loginData: ILoginData = {
             surname: loginSurname.trim(),
@@ -34,6 +37,7 @@ function HomePage(): React.ReactElement {
         if (res.code !== 200) {
             return setErrorNotFount(true)
         }
+
 
         dispatchAuth(
             setLoginData({
@@ -58,7 +62,7 @@ function HomePage(): React.ReactElement {
                     <Input label='Фамилия' setValue={setLoginSurname} />
                     <Input label='Номер студенческого' setValue={setLoginStudentCardNumber} />
                     <Line />
-                    <Button value='Войти' onClick={clickLoginHandler} />
+                    <Button value='Войти' onClick={clickLoginHandler} spinner={loadingData} />
                 </div>
 
             </div></>
