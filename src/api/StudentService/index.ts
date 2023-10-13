@@ -65,12 +65,24 @@ export const StudentService: IStudentService = {
 
             const response = await axios.get(`https://markstat-back.onrender.com/api?card=${loginData.studentCardNumber}&surname=${loginData.surname}`)
 
-            const data: IResponseData = {
-                code: 200,
-                data: response.data.message[0],
+            if (response.status === 200) {
+                const data: IResponseData = {
+                    code: 200,
+                    data: response.data.message[0],
+                }
+                
+                return data
             }
 
-            return data
+            return {
+                code: 404,
+                error: {
+                    errorMessage: 'NOT_FOUND'
+                }
+            }
+
+            
+
         } catch (e) {
             return {
                 code: 500,
