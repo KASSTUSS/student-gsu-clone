@@ -37,8 +37,7 @@ function HomePage(): React.ReactElement {
 
         dispatchAuth(
             setLoginData({
-                surname: loginData.surname,
-                studentCardNumber: loginData.studentCardNumber,
+                studentData: res.data
             })
         )
 

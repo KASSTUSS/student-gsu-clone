@@ -1,11 +1,11 @@
+import { IStudentData } from "@api/StudentService";
+
 export interface IAuthContextValue {
   isAuth?: boolean;
-  surname?: string | '';
-  studentCardNumber?: string | '';
+  studentData?: IStudentData;
 }
 
 export interface IAuthActionReducer {
   type: 'LOGIN' | 'LOGOUT';
-  surname?: string;
-  studentCardNumber?: string;
+  studentData?: IStudentData;
 }

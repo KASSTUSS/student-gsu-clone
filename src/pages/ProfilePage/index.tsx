@@ -8,7 +8,6 @@ import OtherInfo from '@components/OtherInfo';
 import AverageMarksChart from '@components/AverageMarksChart';
 import MarksChart from '@components/MarksChart';
 import PersonalInfo from '@components/PersonalInfo';
-import { IResponseData, IStudentData, StudentService } from '@api/StudentService';
 import { AuthContext, IAuthContextValue } from '@contexts/AuthContext';
 import getCountsOfMarks from '@utils/getCountsOfMarks';
 import getAverageMarks from '@utils/getAvareageMarks copy';
@@ -18,24 +17,7 @@ import LogoutButton from '@components/LogoutButton';
 
 function ProfilePage(): React.ReactElement {
     
-    const loginData: IAuthContextValue = React.useContext(AuthContext);
-
-    const [studentData, setStudentData] = React.useState<IStudentData>();
-
-    async function fetchData() {
-        const res: IResponseData = await StudentService.getStudentData({
-            surname: loginData.surname ? loginData.surname : '',
-            studentCardNumber: loginData.studentCardNumber ? loginData.studentCardNumber : '',
-        });
-
-        if (res.code === 200) {
-            setStudentData(res.data)
-        }
-    }
-
-    React.useEffect(() => {
-        fetchData();
-    }, [])
+    const studentData: IAuthContextValue = React.useContext(AuthContext);
 
     return (
         <div className="profile-page__wrapper">
@@ -63,7 +45,7 @@ function ProfilePage(): React.ReactElement {
                             subtitle='Персональные данные'
                             className='personal-info-block'
                             content={
-                                <PersonalInfo personalData={studentData?.personalData} />
+                                <PersonalInfo personalData={studentData.studentData?.personalData} />
                             }
                         />
                         <WindowBlock
@@ -71,7 +53,7 @@ function ProfilePage(): React.ReactElement {
                             subtitle='Диаграмма отметок по их количеству'
                             className='marks-chart-block'
                             content={
-                                <MarksChart marks={getCountsOfMarks(studentData?.session)} />
+                                <MarksChart marks={getCountsOfMarks(studentData.studentData?.session)} />
                             }
                         />
                         <WindowBlock
@@ -80,7 +62,7 @@ function ProfilePage(): React.ReactElement {
                             className='average-mark-chart-block'
                             content={
                                 <div className='chart-container'>
-                                    <AverageMarksChart averageMarks={getAverageMarks(studentData?.session)} />
+                                    <AverageMarksChart averageMarks={getAverageMarks(studentData.studentData?.session)} />
                                 </div>
                             }
                         />
@@ -89,7 +71,7 @@ function ProfilePage(): React.ReactElement {
                             subtitle=''
                             className='other-info-block'
                             content={
-                                <OtherInfo otherInfo={studentData?.personalData} />
+                                <OtherInfo otherInfo={studentData.studentData?.personalData} />
                             }
                         />
                     </main>

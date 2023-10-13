@@ -2,17 +2,22 @@ import { IAuthActionReducer, IAuthContextValue } from './types';
 
 export const defaultAuthData: IAuthContextValue = {
   isAuth: false,
-  surname: '',
-  studentCardNumber: '',
+  studentData: {
+    personalData: {
+      surname: '',
+      name: '',
+      patronymic: '',
+      faculty: '',
+      specialty: '',
+      group: ''
+    },
+    session: []
+  },
 };
 
 export const setAuthToLocalStorage = (loginData: IAuthContextValue) => {
   localStorage.setItem('isAuth', loginData.isAuth ? '1' : '0');
-  localStorage.setItem('surname', loginData.surname ? loginData.surname : '');
-  localStorage.setItem(
-    'studentCardNumber',
-    loginData.studentCardNumber ? loginData.studentCardNumber : '',
-  );
+  localStorage.setItem('studentData', JSON.stringify(loginData.studentData));
 };
 
 export const reducer = (
@@ -23,8 +28,7 @@ export const reducer = (
     case 'LOGIN': {
       const loginData: IAuthContextValue = {
         isAuth: true,
-        surname: action.surname,
-        studentCardNumber: action.studentCardNumber,
+        studentData: action.studentData,
       };
 
       setAuthToLocalStorage(loginData);

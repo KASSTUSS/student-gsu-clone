@@ -1,12 +1,10 @@
 import { IAuthActionReducer, IAuthContextValue } from './types';
 
 export const setLoginData = ({
-  surname,
-  studentCardNumber,
+  studentData
 }: IAuthContextValue): IAuthActionReducer => ({
   type: 'LOGIN',
-  surname,
-  studentCardNumber,
+  studentData
 });
 
 export const setLogoutData = (): IAuthActionReducer => ({
