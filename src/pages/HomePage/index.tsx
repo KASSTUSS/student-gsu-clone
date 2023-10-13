@@ -34,11 +34,10 @@ function HomePage(): React.ReactElement {
 
         const res: IResponseData = await StudentService.getStudentData(loginData);
 
+        setLoadingData(false);
         if (res.code !== 200) {
             return setErrorNotFount(true)
         }
-
-        setLoadingData(false);
 
         dispatchAuth(
             setLoginData({
