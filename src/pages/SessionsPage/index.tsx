@@ -9,7 +9,7 @@ import BurgerMenu from '@components/BurgerMenu';
 import LogoutButton from '@components/LogoutButton';
 import WindowBlock from '@components/WindowBlock';
 
-const getNormalResult = (result): 'Зачет' | 'Незачет' | 'Неизвестно' => {
+const getNormalResult = (result: true | false | null | number): 'Зачет' | 'Незачет' | 'Неизвестно' | number => {
     switch (result) {
         case true: return 'Зачет';
         case false: return 'Незачет';
