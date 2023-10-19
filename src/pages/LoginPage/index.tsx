@@ -12,7 +12,7 @@ import Logo from '@components/Logo';
 import './style.css';
 import SwitchThemeButton from '@components/ui/SwitchThemeButton';
 
-function HomePage(): React.ReactElement {
+function LoginPage(): React.ReactElement {
 
     const [errorNotFount, setErrorNotFount] = React.useState(false)
     const [loginSurname, setLoginSurname] = React.useState('')
@@ -68,4 +68,4 @@ function HomePage(): React.ReactElement {
     )
 }
 
-export default HomePage;
+export default LoginPage;

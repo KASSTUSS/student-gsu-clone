@@ -58,7 +58,7 @@ export const StudentService: IStudentService = {
             //     }
             // }
 
-            // const data: IResponseData = {
+            // return {
             //     code: 200,
             //     data: exampleJsonFile.result[0],
             // }

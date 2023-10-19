@@ -15,7 +15,7 @@ import NavigationMenu from '@components/NavigationMenu';
 import BurgerMenu from '@components/BurgerMenu';
 import LogoutButton from '@components/LogoutButton';
 
-function ProfilePage(): React.ReactElement {
+function MainPage(): React.ReactElement {
     
     const studentData: IAuthContextValue = React.useContext(AuthContext);
 
@@ -34,7 +34,7 @@ function ProfilePage(): React.ReactElement {
                         <div className="header__container">
                             <BurgerMenu />
                             <h1 className='title-page'>
-                                Обзор
+                                Главная
                             </h1>
                             <SwitchThemeButton />
                         </div>
@@ -81,4 +81,4 @@ function ProfilePage(): React.ReactElement {
     )
 }
 
-export default ProfilePage;
+export default MainPage;

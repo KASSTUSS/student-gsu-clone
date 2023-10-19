@@ -2,10 +2,11 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { LegacyRef } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { CSSTransition } from 'react-transition-group';
 import IButtonProps from './types';
 
 import './style.css';
-import { CSSTransition } from 'react-transition-group';
 
 function Button(props: IButtonProps): React.JSX.Element {
 
@@ -56,10 +57,6 @@ function Button(props: IButtonProps): React.JSX.Element {
             }, 850)
         }
     }, [click])
-
-    React.useEffect(() => {
-        console.log(spinner);
-    }, [spinner])
 
     React.useEffect(() => {
         setSize(Math.max(buttonRef.current?.clientWidth ?? 0, buttonRef.current?.clientHeight ?? 0))

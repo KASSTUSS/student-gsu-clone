@@ -6,7 +6,7 @@ import { IRoute } from '@constants/routesList/types';
 import { AuthContext, IAuthContextValue } from '@contexts/AuthContext';
 import PATHS from '@constants/paths';
 
-const { PROFILE, HOME } = PATHS;
+const { LOGIN, MAIN } = PATHS;
 
 function Router(): React.JSX.Element {
 
@@ -17,9 +17,9 @@ function Router(): React.JSX.Element {
 
     const checkAuth = () => {
         if (authDataContext.isAuth) {
-            navigate(PROFILE)
+            navigate(MAIN)
         } else {
-            navigate(HOME)
+            navigate(LOGIN)
         }
     }
 

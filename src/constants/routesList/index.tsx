@@ -1,19 +1,23 @@
-
-import ProfilePage from '@pages/ProfilePage';
-import HomePage from '@pages/HomePage';
+import LoginPage from '@pages/LoginPage';
+import MainPage from '@pages/MainPage';
+import SessionsPage from '@pages/SessionsPage';
 import type RoutesList from './types';
 import PATHS from '../paths';
 
-const { HOME, PROFILE } = PATHS; 
+const { LOGIN, MAIN, SESSIONS } = PATHS;
 
-const ROUTES_LIST: RoutesList  = [
+const ROUTES_LIST: RoutesList = [
     {
-        path: HOME,
-        element: <HomePage />,
+        path: LOGIN,
+        element: <LoginPage />,
     },
     {
-        path: PROFILE,
-        element: <ProfilePage />,
+        path: MAIN,
+        element: <MainPage />,
+    },
+    {
+        path: SESSIONS,
+        element: <SessionsPage />,
     }
 ];
 
