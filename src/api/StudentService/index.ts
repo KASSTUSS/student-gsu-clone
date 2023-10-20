@@ -81,7 +81,7 @@ export const StudentService: IStudentService = {
                 `http://localhost:3001/api?card=${loginData.studentCardNumber}&surname=${loginData.surname}`,
             ];
 
-            const response = await axios.get(urls[1])
+            const response = await axios.get(urls[0])
 
             if (response.status === 200) {
                 const data: IResponseData = {
