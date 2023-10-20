@@ -18,7 +18,7 @@ function OtherInfo({ otherInfo }: IOtherInfoProps): React.JSX.Element {
                 )
             }
             {
-                otherInfo?.attendance.length > 0 && (
+                otherInfo && (otherInfo?.attendance.length > 0 && (
                     otherInfo.attendance.map((att, i) => (
                         <div key={i}>
                             <div className='label_info'>{`${att.caption}:`}</div>
@@ -27,10 +27,10 @@ function OtherInfo({ otherInfo }: IOtherInfoProps): React.JSX.Element {
                             </div>
                         </div>
                     ))
-                )
+                ))
             }
             {
-                otherInfo?.fees.length > 0 && (
+                otherInfo && (otherInfo?.fees.length > 0 && (
                     otherInfo.fees.map((fee, i) => (
                         <div key={i}>
                             <div className='label_info'>{`${fee.caption}:`}</div>
@@ -39,7 +39,7 @@ function OtherInfo({ otherInfo }: IOtherInfoProps): React.JSX.Element {
                             </div>
                         </div>
                     ))
-                )
+                ))
             }
         </div>
     )
