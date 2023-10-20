@@ -11,6 +11,11 @@ export const defaultAuthData: IAuthContextValue = {
       specialty: '',
       group: ''
     },
+    otherInfo: {
+      attendance: [],
+      fees: [],
+      coefficient: '1',
+    },
     session: []
   },
 };
