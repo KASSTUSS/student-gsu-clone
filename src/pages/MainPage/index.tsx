@@ -71,7 +71,7 @@ function MainPage(): React.ReactElement {
                             subtitle=''
                             className='other-info-block'
                             content={
-                                <OtherInfo otherInfo={studentData.studentData?.personalData} />
+                                <OtherInfo otherInfo={studentData.studentData?.otherInfo} />
                             }
                         />
                     </main>

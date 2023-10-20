@@ -11,6 +11,18 @@ export interface IPersonalData {
     group: string;
 }
 
+export interface IOtherInfoItem {
+    caption: string;
+    value: string;
+    unit: string;
+}
+
+export interface IOtherInfo {
+    coefficient: string;
+    fees: IOtherInfoItem[];
+    attendance: IOtherInfoItem[];
+}
+
 export interface IMarkData {
     object: string;
     result: number | true | false | null;
@@ -23,6 +35,7 @@ export interface IStudentsMarksData {
 
 export interface IStudentData {
     personalData: IPersonalData;
+    otherInfo: IOtherInfo;
     session: IStudentsMarksData[];
 }
 
@@ -63,7 +76,12 @@ export const StudentService: IStudentService = {
             //     data: exampleJsonFile.result[0],
             // }
 
-            const response = await axios.get(`https://markstat-back.onrender.com/api?card=${loginData.studentCardNumber}&surname=${loginData.surname}`)
+            const urls: string[] = [
+                `https://markstat-back.onrender.com/api?card=${loginData.studentCardNumber}&surname=${loginData.surname}`,
+                `http://localhost:3001/api?card=${loginData.studentCardNumber}&surname=${loginData.surname}`,
+            ];
+
+            const response = await axios.get(urls[1])
 
             if (response.status === 200) {
                 const data: IResponseData = {
